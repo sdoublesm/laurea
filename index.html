@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Invito Laurea</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <!-- Titolo -->
+        <header class="title_section">
+            <span class="type" style="--n:71">Ciao, ti aspetto per festeggiare insieme la mia laurea il 12 settembre!</span>
+        </header>
+
+        <!-- Descrizione -->
+        <section class="description_section">
+            <p>Su questo sito troverai un album condiviso con tutte le foto di quel giorno.</p>
+        </section>
+
+        <!-- Countdown -->
+        <section class="countdown_section">
+            <div class="countdown">
+                <div class="countdown-item">
+                    <span id="days">0</span>
+                    <span class="label">Giorni</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="hours">0</span>
+                    <span class="label">Ore</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="minutes">0</span>
+                    <span class="label">Minuti</span>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Countdown fino al 12 settembre 2025 alle 14:00
+        const targetDate = new Date("September 12, 2025 14:00:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                document.querySelector('.countdown').innerHTML = "Laurea avvenuta!";
+                clearInterval(interval);
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").textContent = days;
+            document.getElementById("hours").textContent = hours;
+            document.getElementById("minutes").textContent = minutes;
+            document.getElementById("seconds").textContent = seconds;
+        }
+
+        const interval = setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+
+</html>
