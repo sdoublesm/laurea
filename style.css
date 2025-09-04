@@ -28,7 +28,7 @@ body {
 .title_section .type {
     font-family: monospace;
     color: #0000;
-    font-size: 30px;
+    font-size: 35px;
     background:
         linear-gradient(-90deg,rgb(161, 207, 226) 5px,#0000 0) 10px 0,
         linear-gradient(rgb(132, 173, 190) 0 0) 0 0;
@@ -62,7 +62,7 @@ body {
 
 .countdown {
     font-family: 'Chivo Mono', monospace;
-    color: rgb(132, 173, 190);
+    color: #84adbe;
     font-size: 55px;
     display: flex;
     justify-content: center;
@@ -106,7 +106,7 @@ body {
 /* Responsive */
 @media (max-width: 1200px) {
     .title_section .type {
-        font-size: 40px;
+        font-size: 30px;
     }
 }
 
