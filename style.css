@@ -24,6 +24,10 @@ body {
     width: 100%;
 }
 
+.container > * {
+    margin-bottom: 40px;
+}
+
 /* Titolo */
 .title_section .type {
     font-family: monospace;
@@ -66,7 +70,7 @@ body {
     font-size: 55px;
     display: flex;
     justify-content: center;
-    gap: 30px; /* spazio tra le colonne */
+    gap: 60px; /* spazio tra le colonne */
 }
 
 .countdown-item {
